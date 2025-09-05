@@ -1,7 +1,7 @@
 
 # Rental Reporting System (PostgreSQL)
 
-A database project demonstrating PostgreSQL functions, triggers, and stored procedures** to generate detailed and summary reports of rental revenue.  
+A database project demonstrating PostgreSQL functions, triggers, and stored procedures to generate detailed and summary reports of rental revenue.  
 
 ---
 
