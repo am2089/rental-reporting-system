@@ -1,71 +1,43 @@
-# RENTAL REPORTING SYSTEM (POSTGRESQL)
 
-A database project demonstrating the use of **PostgreSQL functions, triggers, and stored procedures** to generate detailed and summary reports of rental revenue.  
+# Rental Reporting System (PostgreSQL)
 
-This project automates reporting by creating a pipeline:  
-- A **detailed table** stores each rental transaction.  
-- A **summary table** aggregates total rentals and revenue by category.  
-- A **trigger** ensures the summary updates automatically when new rentals are inserted.  
-- A **stored procedure** refreshes both reports on demand.  
+A database project demonstrating PostgreSQL functions, triggers, and stored procedures** to generate detailed and summary reports of rental revenue.  
 
 ---
 
-## FEATURES
-- **User-defined function**: calculates rental length in days.  
-- **Trigger & trigger function**: incrementally update the summary table.  
-- **Stored procedure**: rebuilds detailed and summary reports.  
-- **Test queries**: validate correctness and demonstrate outputs.  
+## Features
+- User-defined function to calculate rental length in days  
+- Trigger & trigger function to keep summary data updated automatically  
+- Stored procedure to refresh both detailed and summary reports  
+- Test queries to validate results  
 
 ---
 
-## FILE STRUCTURE
+## File Structure
 sql/
-├── 00_cleanup.sql # Drops existing objects
-├── 01_schema.sql # Creates detailed and summary tables
-├── 02_functions.sql # Functions for rental length & summary updates
-├── 03_triggers.sql # Trigger to update summary table
-├── 04_procedures.sql # Stored procedure to refresh reports
-└── 05_test_queries.sql # Validation queries and inserts
-
-yaml
-Copy code
+01_schema.sql # Tables
+02_functions.sql # Functions
+03_triggers.sql # Triggers
+04_procedures.sql # Stored procedure
+05_test_queries.sql # Test queries
 
 ---
 
-## HOW TO RUN
+## How to Run
+1. Run files `00 → 05` in order using `psql` or pgAdmin.  
+2. Check results with the test queries.  
 
-### Using `psql`
-```bash
-psql -h localhost -U postgres -d dvdrental -f sql/00_cleanup.sql
-psql -h localhost -U postgres -d dvdrental -f sql/01_schema.sql
-psql -h localhost -U postgres -d dvdrental -f sql/02_functions.sql
-psql -h localhost -U postgres -d dvdrental -f sql/03_triggers.sql
-psql -h localhost -U postgres -d dvdrental -f sql/04_procedures.sql
-psql -h localhost -U postgres -d dvdrental -f sql/05_test_queries.sql
-Using pgAdmin
-Open each file in Query Tool and execute in order (00 → 05).
+---
 
-EXAMPLE OUTPUT
-Summary Table (Top 5 Categories by Revenue):
-
-yaml
-Copy code
- category  | total_rentals | total_revenue
+## Example Output
+category | total_rentals | total_revenue
 -----------+---------------+---------------
- Action    |          5432 |     27,114.54
- Comedy    |          5120 |     24,608.20
- Drama     |          4981 |     23,940.75
- ...
-WHAT I LEARNED
-Designing relational reporting tables.
+Action | 5432 | 27,114.54
+Comedy | 5120 | 24,608.20
+Drama | 4981 | 23,940.75
 
-Writing PL/pgSQL functions and attaching them to triggers.
+---
 
-Automating reporting pipelines with stored procedures.
-
-Testing and validating SQL code systematically.
-
-TECH
-PostgreSQL 13+
-
-pgAdmin / psql
+## Tech
+- PostgreSQL 13+  
+- pgAdmin / psql  
