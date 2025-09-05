@@ -24,7 +24,7 @@ sql/
 ---
 
 ## How to Run
-1. Run files `00 → 05` in order using `psql` or pgAdmin.  
+1. Run files `01 → 05` in order using `psql` or pgAdmin.  
 2. Check results with the test queries.  
 
 ---
