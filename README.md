@@ -24,12 +24,11 @@ Test queries: validate correctness and demonstrate outputs.
 
 FILE STRUCTURE
 sql/
-├── 00_cleanup.sql       # Drops existing objects
-├── 01_schema.sql        # Creates detailed and summary tables
-├── 02_functions.sql     # Functions for rental length & summary updates
-├── 03_triggers.sql      # Trigger to update summary table
-├── 04_procedures.sql    # Stored procedure to refresh reports
-└── 05_test_queries.sql  # Validation queries and inserts
+schema.sql        # Creates detailed and summary tables
+functions.sql     # Functions for rental length & summary updates
+triggers.sql      # Trigger to update summary table
+procedures.sql    # Stored procedure to refresh reports
+test_queries.sql  # Validation queries and inserts
 
 HOW TO RUN
 USING psql
